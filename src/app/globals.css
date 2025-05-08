@@ -1,26 +1,59 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import 'tailwindcss';
+@plugin 'daisyui';
+@plugin 'daisyui/theme' {
+  name: 'light';
+  default: true;
 }
+@plugin "daisyui/theme" {
+  name: 'dark';
+  default: false; /* set as default */
+  color-scheme: dark; /* color of browser-provided UI */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Base colors */
+  --color-base-100: #0a0a0a; /* Main background as requested */
+  --color-base-200: #121212; /* Slightly lighter for card backgrounds */
+  --color-base-300: #1a1a1a; /* For hover states and dividers */
+  --color-base-content: #f0f0f0; /* Light text for good contrast */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Primary colors - a nice purple for accents */
+  --color-primary: #9d4edd;
+  --color-primary-content: #ffffff;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Secondary colors - teal for variety */
+  --color-secondary: #2cb67d;
+  --color-secondary-content: #ffffff;
+
+  /* Accent colors - soft orange */
+  --color-accent: #ff7f50;
+  --color-accent-content: #ffffff;
+
+  /* Neutral - dark gray */
+  --color-neutral: #2a2a2a;
+  --color-neutral-content: #f0f0f0;
+
+  /* Status colors */
+  --color-info: #3abff8;
+  --color-info-content: #ffffff;
+  --color-success: #36d399;
+  --color-success-content: #ffffff;
+  --color-warning: #fbbd23;
+  --color-warning-content: #000000;
+  --color-error: #f87272;
+  --color-error-content: #ffffff;
+
+  /* border radius - slightly rounded for modern look */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.375rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size - thin borders for sleek look */
+  --border: 1px;
+
+  /* effects */
+  --depth: 0.8; /* subtle shadows */
+  --noise: 0.03; /* very subtle noise texture */
 }
